@@ -79,22 +79,8 @@ export default function NavbarResponsive({ printDiv }) {
     document.body.innerHTML = originalContents;
   };
   return (
-    <div>
-      <div className={style.wrapper}>
-        {icons.slice(0, 2).map((element, index) =>
-          <button key={index} onClick={() => handleAction(element)}>
-            {element.icon}
-          </button>
-        )}
-
-        <button onClick={handlePrint}>
-          <AiFillPrinter />
-        </button>
-        {icons.slice(3, 5).map((element, index) =>
-          <button key={index} onClick={() => handleAction(element)}>
-            {element.icon}
-          </button>
-        )}
+    <div className={style.main}>
+    <div className={style.dropdown}>
         <div className={style.fontStyleBox}>
           <select onChange={handleZoom}>
             <option>100%</option>
@@ -148,6 +134,23 @@ export default function NavbarResponsive({ printDiv }) {
             )}
           </select>
         </div>
+    </div>
+      <div className={style.wrapper}>
+        {icons.slice(0, 2).map((element, index) =>
+          <button key={index} onClick={() => handleAction(element)}>
+            {element.icon}
+          </button>
+        )}
+
+        <button onClick={handlePrint}>
+          <AiFillPrinter />
+        </button>
+        {icons.slice(3, 5).map((element, index) =>
+          <button key={index} onClick={() => handleAction(element)}>
+            {element.icon}
+          </button>
+        )}
+
 
         {icons.slice(5, 9).map((element, index) =>
           <button key={index} onClick={() => handleAction(element)}>

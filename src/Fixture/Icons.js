@@ -13,6 +13,7 @@ import {
 import { FaRemoveFormat } from "react-icons/fa";
 import { RiSubscript, RiSuperscript } from "react-icons/ri";
 import { GoListOrdered, GoListUnordered } from "react-icons/go";
+import { BsTextIndentLeft, BsTextIndentRight } from "react-icons/bs";
 export const icons = [
   {
     icon: <MdUndo />,
@@ -78,9 +79,18 @@ export const icons = [
     icon: <RiSuperscript />,
     action: "superscript"
   },
+  
   {
     icon: <RiSubscript />,
     action: "subscript"
+  },
+  {
+    icon: <BsTextIndentLeft />,
+    action: "indent"
+  },
+  {
+    icon: <BsTextIndentRight />,
+    action: "outdent"
   },
   {
     icon: <FaRemoveFormat />,
@@ -127,4 +137,4 @@ export const emojiList = [
   } ,
 ];
 
-export const zoomList = ["50%", "75%", "90%", "100%", "125%", "150%", "200%"]
+export const zoomList = ["25%","50%","75%", "100%", "150%", "200%"]

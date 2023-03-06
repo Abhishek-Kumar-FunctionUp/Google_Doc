@@ -91,6 +91,7 @@ export default function Navbar({ printDiv }) {
     window.print();
     document.body.innerHTML = originalContents;
   };
+  
   return (
     <div>
       <div className={style.wrapper}>

@@ -71,6 +71,7 @@
 .input{
   border: none;
   font-size: 1.2rem;
+  width: 12vw;
   outline: none;
 }
 
@@ -81,6 +82,10 @@
    }
    .navbar{
     display: none;
+   }
+
+   .textArea{
+    margin-top: -120vh;
    }
 
 }

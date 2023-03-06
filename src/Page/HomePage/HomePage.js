@@ -16,7 +16,7 @@ export default function HomePage() {
  
   async function handleDownload() {
     const sheetContent = document.getElementById(`printablediv`);
-    const canvas = await html2canvas(sheetContent, { dpi: 500 });
+    const canvas = await html2canvas(sheetContent, { dpi: 300 });
     const imageData = canvas.toDataURL("image/png", 1.0);
     const pdfDoc = new jsPDF({
       orientation: "portrait",
@@ -50,9 +50,12 @@ export default function HomePage() {
             />
          
         </div>
-
-        <Navbar printDiv={printDiv} className={style.navbar}/>
-        {/* <NavbarResponsive printDiv={printDiv} className={style.navbarResponsive}/> */}
+         <div className={style.navbar}>
+        <Navbar printDiv={printDiv}/>
+        </div>
+        <div className={style.navbarResponsive}>
+        <NavbarResponsive printDiv={printDiv}/>
+        </div>
         <div className={style.wrapper}>
           <div
             ref={printDiv}
