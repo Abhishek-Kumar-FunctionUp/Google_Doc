@@ -110,15 +110,21 @@ export const headingList = ["H1", "H2", "H3", "H4", "H5", "H6"];
 
 export const emojiList = [
   {
-    icon: "Smile",
-    value: "&#128514"
-  },
+    icon : "Smile",
+    value : "&#128514",
+  } ,
   {
-    icon: "Thumbs Up",
-    value: "&#128514"
-  },
+    icon : "Thumb-Up",
+    value : "&#128514",
+  } ,
   {
-    icon: "Thumbs Down",
-    value: "&#128514"
-  }
+    icon : "Thumb-Down",
+    value : "&#128514",
+  } ,
+  {
+    icon : "Kiss",
+    value : "&#128536",
+  } ,
 ];
+
+export const zoomList = ["50%", "75%", "90%", "100%", "125%", "150%", "200%"]

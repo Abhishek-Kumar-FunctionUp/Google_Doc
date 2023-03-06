@@ -3,16 +3,31 @@ import Navbar from "../../Component/Navbar/Navbar";
 import style from "./HomePage.module.css";
 import { BsStarFill } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import ReactPDF from "@react-pdf/renderer";
-import MyDocument from "../My Document/MyDocument";
+import NavbarResponsive from "../../Component/NavbarResponsive/NavbarResponsive";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+
 
 export default function HomePage() {
   const [color, setColor] = useState("black");
-
-  function handleDownload() {
-    ReactPDF.render(<MyDocument />, `${__dirname}/doc.pdf`);
-  }
+  const [title, setTitle] = useState("Untitled Document");
   const printDiv = useRef();
+
+ 
+  async function handleDownload() {
+    const sheetContent = document.getElementById(`printablediv`);
+    const canvas = await html2canvas(sheetContent, { dpi: 500 });
+    const imageData = canvas.toDataURL("image/png", 1.0);
+    const pdfDoc = new jsPDF({
+      orientation: "portrait",
+      unit: "mm",
+      format: "a4",
+      compress: false,
+    });
+    pdfDoc.addImage(imageData, "PNG", 0, 0, 210, 297, "", "FAST");
+    pdfDoc.save(`${title}.pdf`);
+  }
+  
   
 
   return (
@@ -24,17 +39,20 @@ export default function HomePage() {
             alt="logo"
             className={style.icon}
           />
-          <sup contentEditable="true">Google Document</sup>
-          <sup>
-            {" "}<BsStarFill
+         <input
+              value={title}
+              className={style.input}
+              onChange={(e) => setTitle(e.target.value)}
+            /><BsStarFill
               className={style.star}
               onClick={() => setColor(color === "black" ? "yellow" : "black")}
               style={{ color: color }}
             />
-          </sup>
+         
         </div>
 
-        <Navbar printDiv={printDiv} />
+        <Navbar printDiv={printDiv} className={style.navbar}/>
+        {/* <NavbarResponsive printDiv={printDiv} className={style.navbarResponsive}/> */}
         <div className={style.wrapper}>
           <div
             ref={printDiv}
@@ -44,8 +62,8 @@ export default function HomePage() {
           />
         </div>
       </div>
-      <div className={style.download}>
-        <HiDownload onClick={handleDownload} />
+      <div onClick={handleDownload} className={style.download}>
+        <HiDownload />
       </div>
     </div>
   );

@@ -1,14 +1,14 @@
-.wrapper {
+.wrapper{
     height: 6vh;
     border: 1px solid rgb(207, 207, 207);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    width: 3vw;
     gap: 0.4rem;
     background-color: white;
-  }
-  
-  .wrapper button {
+}
+
+.wrapper button {
     border: none;
     background-color: white;
     font-size: 1.2rem;
@@ -21,7 +21,7 @@
     height: 4vh;
     cursor: pointer;
   }
-  
+
   .wrapper button:hover {
     background-color: rgba(210, 207, 207, 0.5);
   }
@@ -109,11 +109,4 @@
   
   .wrapper span {
     font-size: 1.1rem;
-  }
-  
-
-  @media only screen and (max-width: 1300px) {
-   
-   
-
   }

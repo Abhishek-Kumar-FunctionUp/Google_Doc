@@ -7,6 +7,10 @@
   gap: 1rem;
   padding: 0.5rem 1rem;
 }
+.navbarResponsive{
+  display:none;
+}
+
 .star {
   font-size: 1rem;
 }
@@ -62,4 +66,21 @@
 
 .download:hover{
     cursor: pointer;
+}
+
+.input{
+  border: none;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+@media only screen and (max-width: 1300px) {
+   
+   .navbarResponsive{
+    display: unset;
+   }
+   .navbar{
+    display: none;
+   }
+
 }
