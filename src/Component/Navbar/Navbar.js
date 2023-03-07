@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { AiFillPrinter, AiOutlineHighlight } from "react-icons/ai";
 import { BsLink } from "react-icons/bs";
-
 import { ImFontSize, ImTextColor } from "react-icons/im";
 import {
   icons,
